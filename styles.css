@@ -1,0 +1,386 @@
+/* ==========================================================
+   MiPrimerProyectoWeb · Hoja de estilos principal
+   Autor: German Andre Tirado Ariza
+   ========================================================== */
+
+:root {
+  --bg: #f7f9fc;
+  --bg-alt: #eaf0f8;
+  --surface: #ffffff;
+  --text: #1b2433;
+  --text-muted: #55627a;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --accent: #0ea5a4;
+  --border: #d8e0ee;
+  --shadow: 0 6px 20px rgba(27, 36, 51, 0.08);
+  --radius: 14px;
+  --max-width: 1080px;
+}
+
+/* Modo oscuro (se activa con el botón del encabezado) */
+body.dark {
+  --bg: #0f1623;
+  --bg-alt: #151e2f;
+  --surface: #1a2438;
+  --text: #e8eefb;
+  --text-muted: #9fb0cf;
+  --primary: #5b8cff;
+  --primary-dark: #7aa2ff;
+  --accent: #2dd4bf;
+  --border: #2a3652;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--primary);
+}
+
+.container {
+  width: min(100% - 2rem, var(--max-width));
+  margin-inline: auto;
+}
+
+/* ---------- Encabezado ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav-list {
+  display: flex;
+  gap: 1.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.3rem 0.1rem;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.theme-toggle {
+  border: 1px solid var(--border);
+  background: var(--bg-alt);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  border-color: var(--primary);
+}
+
+/* ---------- Portada ---------- */
+.hero {
+  padding-block: 4rem 3rem;
+  background: linear-gradient(160deg, var(--bg-alt), var(--bg));
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.eyebrow {
+  margin: 0 0 0.6rem;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.9rem, 4vw, 2.9rem);
+  line-height: 1.15;
+}
+
+.lead {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin: 0 0 1.6rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.hero-figure {
+  margin: 0;
+}
+
+.hero-figure img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.hero-figure figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.3rem;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-small {
+  padding: 0.35rem 0.9rem;
+  font-size: 0.9rem;
+  background: var(--primary);
+  color: #fff;
+  margin-left: 0.5rem;
+}
+
+/* ---------- Secciones ---------- */
+.section {
+  padding-block: 3.5rem;
+}
+
+.section-alt {
+  background: var(--bg-alt);
+}
+
+h2 {
+  margin: 0 0 0.6rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.section-intro {
+  color: var(--text-muted);
+  max-width: 62ch;
+  margin: 0 0 2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.2rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  margin: 0.6rem 0 0.4rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.card-icon {
+  font-size: 2rem;
+}
+
+kbd {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-bottom-width: 3px;
+  border-radius: 6px;
+  padding: 0.05rem 0.4rem;
+  font-size: 0.9em;
+}
+
+/* ---------- Proyecto ---------- */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.check-list li {
+  padding-left: 1.7rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.check-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+code {
+  font-family: Consolas, "Courier New", monospace;
+  background: var(--bg-alt);
+  padding: 0.1rem 0.35rem;
+  border-radius: 5px;
+  font-size: 0.92em;
+}
+
+.tree {
+  margin: 0;
+  background: #101826;
+  color: #d6e4ff;
+  padding: 1.3rem 1.5rem;
+  border-radius: var(--radius);
+  overflow-x: auto;
+  box-shadow: var(--shadow);
+}
+
+.tree code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+/* ---------- Autor ---------- */
+.author {
+  max-width: 760px;
+}
+
+.counter-box {
+  background: var(--surface);
+  border: 1px dashed var(--primary);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+}
+
+/* ---------- Pie de página ---------- */
+.site-footer {
+  background: #101826;
+  color: #b9c6e0;
+  text-align: center;
+  padding-block: 1.6rem;
+  font-size: 0.92rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 800px) {
+  .hero-grid,
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-block: 2.5rem 2rem;
+  }
+
+  .nav-list {
+    gap: 0.8rem;
+    font-size: 0.95rem;
+  }
+}

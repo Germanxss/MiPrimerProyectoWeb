@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mi primer proyecto web: herramientas esenciales para el desarrollo de aplicaciones web.">
+  <meta name="author" content="German Andre Tirado Ariza">
+  <title>Mi Primer Proyecto Web | Herramientas de Desarrollo Web</title>
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio">
+        <img src="img/logo.svg" alt="Logo del proyecto" width="40" height="40">
+        <span>MiPrimerProyectoWeb</span>
+      </a>
+      <nav aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#herramientas">Herramientas</a></li>
+          <li><a href="#proyecto">Proyecto</a></li>
+          <li><a href="#autor">Autor</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar entre modo claro y oscuro">🌙 Modo oscuro</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PORTADA -->
+    <section id="inicio" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Ingeniería de Software · Desarrollo Web</p>
+          <h1>Herramientas esenciales para desarrollar aplicaciones web</h1>
+          <p class="lead">
+            Un editor de código, un navegador moderno, un servidor local y las herramientas
+            de desarrollador son la base de cualquier proyecto web. Esta página es mi primer
+            proyecto y documenta ese entorno de trabajo.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#herramientas">Ver herramientas</a>
+            <a class="btn btn-secondary" href="https://developer.mozilla.org/es/docs/Learn" target="_blank" rel="noopener noreferrer">Aprender en MDN Web Docs ↗</a>
+          </div>
+        </div>
+        <figure class="hero-figure">
+          <img src="img/hero.svg" alt="Ilustración de un editor de código junto a una ventana de navegador mostrando una página web" width="560" height="380">
+          <figcaption>Editor de código + navegador: el ciclo básico del desarrollo web.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- SECCIÓN DE CONTENIDO: HERRAMIENTAS -->
+    <section id="herramientas" class="section">
+      <div class="container">
+        <h2>Las cuatro herramientas fundamentales</h2>
+        <p class="section-intro">
+          Cada herramienta cumple una función distinta, y juntas forman el flujo de trabajo
+          de escribir, ejecutar, probar y depurar.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">📝</div>
+            <h3>Editor de código</h3>
+            <p>Permite escribir HTML, CSS y JavaScript con resaltado de sintaxis, autocompletado y extensiones. <strong>Ejemplo:</strong> Visual Studio Code.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🌐</div>
+            <h3>Navegador web</h3>
+            <p>Interpreta y muestra el código del proyecto tal como lo verá el usuario final. <strong>Ejemplos:</strong> Google Chrome, Firefox, Edge.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🖥️</div>
+            <h3>Servidor local</h3>
+            <p>Sirve los archivos desde tu propio equipo para probar el proyecto como si estuviera en internet. <strong>Ejemplos:</strong> Live Server, XAMPP, Node.js.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🛠️</div>
+            <h3>Herramientas de desarrollador</h3>
+            <p>Inspeccionan elementos, estilos, red y consola para detectar y corregir errores. Se abren con la tecla <kbd>F12</kbd>.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN DE CONTENIDO: PROYECTO -->
+    <section id="proyecto" class="section section-alt">
+      <div class="container two-col">
+        <div>
+          <h2>Estructura del proyecto</h2>
+          <p>
+            Organizar los archivos desde el inicio facilita el mantenimiento y el trabajo
+            en equipo. Este proyecto separa la estructura, el estilo y el comportamiento:
+          </p>
+          <ul class="check-list">
+            <li><code>index.html</code>: estructura y contenido de la página.</li>
+            <li><code>css/styles.css</code>: diseño y apariencia visual.</li>
+            <li><code>js/main.js</code>: interactividad y comportamiento.</li>
+            <li><code>img/</code>: imágenes y recursos gráficos.</li>
+          </ul>
+        </div>
+        <pre class="tree" aria-label="Árbol de carpetas del proyecto"><code>MiPrimerProyectoWeb/
+├── index.html
+├── css/
+│   └── styles.css
+├── js/
+│   └── main.js
+└── img/
+    ├── hero.svg
+    └── logo.svg</code></pre>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: AUTOR -->
+    <section id="autor" class="section">
+      <div class="container author">
+        <h2>Sobre el autor</h2>
+        <p>
+          <strong>German Andre Tirado Ariza</strong>, estudiante de Ingeniería de Software.
+          Este proyecto corresponde a la actividad de configuración del entorno de desarrollo web
+          y creación de una primera página con HTML5, CSS y JavaScript.
+        </p>
+        <p class="counter-box">
+          Has visitado esta sección <strong id="visit-counter">0</strong> veces en esta sesión.
+          <button id="counter-btn" class="btn btn-small" type="button">Sumar visita</button>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year">2026</span> German Andre Tirado Ariza · Ingeniería de Software · Hecho con HTML5, CSS y JavaScript.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
